@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About • Andy's Woodworks</title>
+    <meta name="description" content="About the maker." />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪵</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="container nav-inner">
+        <a class="brand" href="index.html">
+          <div class="logo">🪵</div>
+          <div>Andy's Woodworks<small>About</small></div>
+        </a>
+        <div class="nav-links">
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="btn">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1 class="h1">About the Maker</h1>
+      <div class="grid grid-2">
+        <div class="card">
+          <img
+            src="assets/sample-2.jpg"
+            alt="Maker Portrait"
+            style="width: 100%; height: auto; border-radius: 12px"
+          />
+        </div>
+        <div class="card prose">
+          <p>This is filler for the about page.</p>
+          <p>Extra information about the maker goes here.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container">
+      © <span id="year"></span> Andy's Woodworks
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

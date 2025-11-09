@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Andy's Woodworks</title>
+    <meta
+      name="description"
+      content="Handcrafted furniture and wood projects."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪵</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="container nav-inner">
+        <a class="brand" href="index.html">
+          <div class="logo">🪵</div>
+          <div>
+            Andy's Woodworks
+            <small>Handmade • Kentucky</small>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="btn">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <div class="kicker">Handcrafted, one piece at a time</div>
+          <h1 class="h1">
+            Furniture and small goods built with patience, sharp tools, and a
+            love of good timber.
+          </h1>
+          <p class="prose">
+            Hand made furniture and wood projects built in Kentucky. Each piece
+            is designed to highlight the natural beauty of the wood while
+            providing lasting function.
+          </p>
+          <div
+            style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap"
+          >
+            <a class="btn" href="projects.html">Browse Projects</a>
+            <a href="about.html">Meet the maker →</a>
+          </div>
+        </div>
+        <div class="card">
+          <figure>
+            <img
+              src="assets/Bench.jpg"
+              alt="Bench Preview"
+              style="width: 100%; height: auto; border-radius: 14px"
+            />
+            <figcaption style="margin-top: 8px; color: #6b5b4a">
+              Featured: Outdoor Bench
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="grid grid-3">
+        <div class="card">
+          <div class="badge">Durable Joinery</div>
+          <h3 class="h2">Built to last</h3>
+          <p class="prose">
+            Buit for outdoor and indoor use with traditional joinery.
+          </p>
+        </div>
+        <div class="card">
+          <div class="badge">Local & Reclaimed</div>
+          <h3 class="h2">Thoughtful materials</h3>
+          <p class="prose">
+            Whenever possible, boards are reclaimed or locally sourced to
+            highlight character and reduce waste.
+          </p>
+        </div>
+        <div class="card">
+          <div class="badge">Custom Orders</div>
+          <h3 class="h2">Made for your home</h3>
+          <p class="prose">
+            Sizes, finishes, and hardware can be tuned to your space. Sketches
+            welcome.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container">
+      © <span id="year"></span> Andy's Woodworks • Built by family
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

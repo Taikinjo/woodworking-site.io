@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects • Andy's Woodworks</title>
+    <meta
+      name="description"
+      content="Portfolio of handcrafted woodworking projects."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪵</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="container nav-inner">
+        <a class="brand" href="index.html">
+          <div class="logo">🪵</div>
+          <div>Andy's Woodworks<small>Portfolio</small></div>
+        </a>
+        <div class="nav-links">
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="btn">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="breadcrumbs">Home / Projects</div>
+      <h1 class="h1">Projects</h1>
+      <div id="gallery" class="grid grid-3"></div>
+    </main>
+
+    <footer class="container">
+      © <span id="year"></span> Andy's Woodworks
+    </footer>
+
+    <script src="projects.js"></script>
+    <script>
+      const container = document.getElementById("gallery");
+      (window.PROJECTS || []).forEach((p) => {
+        const el = document.createElement("a");
+        el.className = "card gallery-card";
+        el.href = `project.html?id=${encodeURIComponent(p.id)}`;
+        el.innerHTML = `
+        <img src="${(p.images && p.images[0]) || "assets/sample-1.jpg"}" alt="${
+          p.title
+        }">
+        <div style="padding:10px 4px 0">
+          <div class="badge">${p.year}</div>
+          <h3 class="h2" style="margin:6px 0">${p.title}</h3>
+          <div style="color:#6b5b4a">${p.wood || ""} ${
+          p.size ? "• " + p.size : ""
+        }</div>
+        </div>`;
+        container.appendChild(el);
+      });
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

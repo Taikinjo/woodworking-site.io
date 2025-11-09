@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project • Andy's Woodworks</title>
+    <meta name="description" content="Project details and build notes." />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪵</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="container nav-inner">
+        <a class="brand" href="index.html">
+          <div class="logo">🪵</div>
+          <div>Andy's Woodworks<small>Project</small></div>
+        </a>
+        <div class="nav-links">
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="btn">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="breadcrumbs">
+        <a href="projects.html">Projects</a> / <span id="crumb">Loading…</span>
+      </div>
+      <div id="view"></div>
+    </main>
+
+    <footer class="container">
+      © <span id="year"></span> Andy's Woodworks
+    </footer>
+
+    <script src="utils.js"></script>
+    <script src="projects.js"></script>
+    <script>
+      const id = getParam("id");
+      const p =
+        (window.PROJECTS || []).find((x) => x.id === id) ||
+        window.PROJECTS?.[0];
+      document.getElementById("crumb").textContent = p ? p.title : "Unknown";
+      const el = document.getElementById("view");
+      if (!p) {
+        el.innerHTML = "<p>Project not found.</p>";
+      } else {
+        el.innerHTML = `
+        <section class="grid grid-2" style="margin-top:8px">
+          <div class="card">
+            <div class="grid grid-2">
+              ${(p.images || ["assets/sample-1.jpg"])
+                .map(
+                  (src) =>
+                    `<img src="${src}" style="width:100%;height:220px;object-fit:cover;border-radius:12px">`
+                )
+                .join("")}
+            </div>
+          </div>
+          <article class="card prose">
+            <div class="badge">${p.year}</div>
+            <h1 class="h1" style="margin-top:8px">${p.title}</h1>
+            <p style="color:#6b5b4a">${p.wood || ""} ${
+          p.size ? "• " + p.size : ""
+        } ${p.finish ? "• " + p.finish : ""}</p>
+            <p>${p.description || ""}</p>
+            <hr style="border:none;border-top:1px solid #eadfd3;margin:16px 0">
+            <details>
+              <summary style="cursor:pointer;font-weight:600">Build notes</summary>
+              <ul>
+                <li>Joinery: add specifics (e.g., mortise & tenon, dovetails).</li>
+                <li>Hardware: hinges/pulls/fasteners.</li>
+                <li>Finish schedule and sanding grits.</li>
+              </ul>
+            </details>
+          </article>
+        </section>`;
+      }
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
