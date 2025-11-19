@@ -1,17 +1,24 @@
-# Dad’s Woodworks — Personal Project
+# A/C Woodworking — Portfolio Website
 
-This is a small web project I built for my dad’s woodworking business.  
-It’s a simple, static website designed to showcase his handmade furniture and custom woodcrafts.
+A custom-built static website created for A/C Woodworking, a small business specializing in handcrafted furniture and custom woodwork.  
+The site is designed to showcase completed projects and highlight the quality of craftsmanship.
 
-The site includes:
-- A clean **home page** introducing his work  
-- A **project gallery** with multiple photos and descriptions for each piece  
-- An **about page** sharing his background and workshop story  
-- A **contact page** for inquiries and commissions
-- Personal info and picture have been redacted
+## Features
 
-I created this project using basic **HTML, CSS, and JavaScript** — no frameworks or CMS.  
-It was a great learning experience in designing, structuring, and deploying a static website from scratch.
+- **Home Page** — Clean introduction to the brand  
+- **Project Gallery** — Photos and descriptions of completed pieces  
+- **About Page** — Background information and workshop story  
+- **Contact Page** — Inquiries and custom commission requests  
+- Personal information and images have been redacted for privacy
 
-### 💡 Notes
-This site is lightweight and runs entirely in the browser.  
+## Tech Stack
+
+- **HTML**  
+- **CSS**  
+- **JavaScript**  
+- No frameworks or CMS were used
+
+## Notes
+
+This is a lightweight, fully client-side static site that runs entirely in the browser.
+
